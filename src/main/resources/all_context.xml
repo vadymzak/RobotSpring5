@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <import resource="sony_context.xml"/>
+    <import resource="toshiba_context.xml"/>
+  <!--  <import resource="database_context.xml"/>-->
+
+    <bean id="t1000" class="ua.javabegin.spring.impl.robot.T1000"
+          p:hand-ref="sonyHand"
+          p:leg-ref="sonyLeg"
+          p:head-ref="toshibaHead">
+        <!--<constructor-arg ref="sonyHand"/>-->
+        <!--<constructor-arg ref="sonyLeg"/>-->
+        <!--<constructor-arg ref="sonyHead"/>-->
+        <constructor-arg value="yellow" type="java.lang.String"/>
+        <constructor-arg value="2005" type="int"/>
+        <constructor-arg value="true" type="boolean"/>
+        <!--<property name="hand" ref="sonyHand"/>
+        <property name="head" ref="toshibaHead"/>
+        <property name="leg" ref="toshibaLeg"/>-->
+    </bean>
+
+    <bean id="t1000Empty" class="ua.javabegin.spring.impl.robot.T1000">
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="toshibaHand"/>
+        <constructor-arg ref="toshibaHead"/>
+    </bean>
+
+    <bean id="t1000All" class="ua.javabegin.spring.impl.robot.T1000">
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="toshibaLeg"/>
+        <constructor-arg ref="toshibaHead"/>
+        <constructor-arg value="green"/>
+        <constructor-arg value="2015"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+
+    <!--<bean class="ua.javabegin.spring.main.MyBeanPostProccessor"/>-->
+</beans>
