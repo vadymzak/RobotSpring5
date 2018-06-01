@@ -6,7 +6,7 @@ import ua.javabegin.spring.interfaces.Head;
 import ua.javabegin.spring.interfaces.Leg;
 
 
-public class T1000 extends BaseModel implements InitializingBean {
+public class T1000 extends BaseModel{
 
 
     private String color;
@@ -45,7 +45,4 @@ public class T1000 extends BaseModel implements InitializingBean {
     }
 
 
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("init");
-    }
 }
