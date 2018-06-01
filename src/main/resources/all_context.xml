@@ -29,15 +29,20 @@
         <constructor-arg ref="toshibaHead"/>
     </bean>
 
-    <bean id="t1000All" class="ua.javabegin.spring.impl.robot.T1000">
-        <constructor-arg ref="sonyHand"/>
-        <constructor-arg ref="toshibaLeg"/>
-        <constructor-arg ref="toshibaHead"/>
+    <bean id="t1000All" class="ua.javabegin.spring.impl.robot.T1000" parent="baseModel">
+
         <constructor-arg value="green"/>
         <constructor-arg value="2015"/>
         <constructor-arg value="true"/>
+
+        <property name="leg" ref="sonyLeg"/>
     </bean>
 
+    <bean id="baseModel" abstract="true">
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="toshibaLeg"/>
+        <constructor-arg ref="toshibaHead"/>
+    </bean>
 
-    <!--<bean class="ua.javabegin.spring.main.MyBeanPostProccessor"/>-->
+   <!-- <bean class="ua.javabegin.spring.main.MyBeanPostProccessor"/>-->
 </beans>

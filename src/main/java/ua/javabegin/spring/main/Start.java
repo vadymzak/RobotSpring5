@@ -10,8 +10,8 @@ public class Start {
 
         //Object obj = (T1000) context.getBean("t1000");
 
-            T1000 t1000 = (T1000) context.getBean("t1000");
-            t1000.fire();
+        T1000 t1000 = (T1000) context.getBean("t1000All");
+        t1000.fire();
 
     }
 }
