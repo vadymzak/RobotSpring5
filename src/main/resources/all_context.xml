@@ -11,4 +11,38 @@
         <lookup-method name="getRobot" bean="t1000"/>
     </bean>
 
+
+    <!--Collection List-->
+    <bean id="t1000Pool" class="ua.javabegin.spring.pool.T1000Pool">
+        <property name="robotCollection">
+            <list>
+                <ref bean="t1000Empty"/>
+                <ref bean="t1000All"/>
+                <bean id="t1000Gold" class="ua.javabegin.spring.impl.robot.T1000" parent="baseModel" scope="prototype">
+                    <constructor-arg value="gold" index="3"/>
+                    <constructor-arg value="2017" index="4"/>
+                    <constructor-arg value="false" index="5"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <!--Map and create from constructor-->
+    <bean id="t1000PoolMap" class="ua.javabegin.spring.pool.T1000PoolMap">
+        <constructor-arg name="robotMap">
+            <map>
+                <entry key="2005" value-ref="t1000" />
+                <entry key="2010" value-ref="t1000All" />
+                <entry key="2011">
+                    <bean id="t1000Silver" class="ua.javabegin.spring.impl.robot.T1000" parent="baseModel" scope="prototype">
+                        <constructor-arg value="Silver" index="3"/>
+                        <constructor-arg value="2017" index="4"/>
+                        <constructor-arg value="false" index="5"/>
+                    </bean>
+                </entry>
+
+            </map>
+        </constructor-arg>
+    </bean>
+
+
 </beans>

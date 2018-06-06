@@ -52,7 +52,5 @@ public abstract class BaseModel implements Robot {
         leg.go();
     }
 
-    public void dance() {
-
-    }
+    public abstract void dance();
 }

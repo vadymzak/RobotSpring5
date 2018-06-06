@@ -32,14 +32,14 @@ public class T1000 extends BaseModel{
         this.soundEnabled = soundEnabled;
     }
 
-
+    @Override
     public void fire() {
         super.fire();
         System.out.println("color - " + color);
         System.out.println("year - " + year);
         System.out.println("sound - " + soundEnabled);
     }
-
+    @Override
     public void dance() {
         System.out.println("T1000 is dancing");
     }

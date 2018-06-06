@@ -38,6 +38,17 @@
         <constructor-arg ref="toshibaLeg"/>
         <constructor-arg ref="toshibaHead"/>
     </bean>
+    <!-- Replace method -->
+    <bean id="t1000Replace" class="ua.javabegin.spring.impl.robot.T1000">
+        <constructor-arg value="Red"/>
+        <constructor-arg value="2018"/>
+        <constructor-arg value="true"/>
+        <replaced-method name="fire" replacer="replaceBean" />
+    </bean>
+
+    <bean id="replaceBean" class="ua.javabegin.spring.impl.replace.RobotReplaceMethod"/>
+
+
 
     <!-- <bean class="ua.javabegin.spring.main.MyBeanPostProccessor"/>-->
 </beans>
