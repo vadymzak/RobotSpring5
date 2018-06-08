@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+    >
 
-    <bean id="sonyHand" class="ua.javabegin.spring.impl.sony.SonyHand"/>
+    <bean  class="ua.javabegin.spring.impl.sony.SonyHand">
+        <property name="color" value="Golden" />
+        <qualifier value="sonyGoldenHand" />
+    </bean>
+    <bean class="ua.javabegin.spring.impl.sony.SonyHand">
+        <property name="color" value="Bronze" />
+        <qualifier value="sonyBronzeHand" />
+    </bean>
     <bean id="sonyLeg" class="ua.javabegin.spring.impl.sony.SonyLeg"/>
-    <bean id="sonyHead" class="ua.javabegin.spring.impl.sony.SonyHead"/>
+    <bean id="sonyHead" class="ua.javabegin.spring.impl.sony.SonyHead" primary="true" />
 </beans>

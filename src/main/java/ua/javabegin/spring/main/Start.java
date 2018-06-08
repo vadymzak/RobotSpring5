@@ -18,7 +18,9 @@ public class Start {
       /*  T1000Pool t1000Pool = (T1000Pool) context.getBean("t1000Pool");
         t1000Pool.fire();
 */
-        T1000PoolMap t1000PoolMap = (T1000PoolMap) context.getBean("t1000PoolMap");
-        t1000PoolMap.fire();
+        T1000 t1000 = (T1000)context.getBean("t1000");
+        t1000.fire();
+
+
     }
 }
