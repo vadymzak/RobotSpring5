@@ -2,7 +2,6 @@ package ua.javabegin.spring.impl.robot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
 import ua.javabegin.spring.interfaces.Hand;
 import ua.javabegin.spring.interfaces.Head;
 import ua.javabegin.spring.interfaces.Leg;
@@ -18,6 +17,7 @@ public abstract class BaseModel implements Robot {
     private Leg leg;
 
     @Autowired
+    @HeadType("ToshibaHead")
     private Head head;
 
     public BaseModel(){

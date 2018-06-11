@@ -13,5 +13,7 @@
         <qualifier value="sonyBronzeHand" />
     </bean>
     <bean id="sonyLeg" class="ua.javabegin.spring.impl.sony.SonyLeg"/>
-    <bean id="sonyHead" class="ua.javabegin.spring.impl.sony.SonyHead" primary="true" />
+    <bean id="sonyHead" class="ua.javabegin.spring.impl.sony.SonyHead">
+        <qualifier type="ua.javabegin.spring.impl.robot.HeadType" value="SonyHead"/>
+    </bean>
 </beans>
