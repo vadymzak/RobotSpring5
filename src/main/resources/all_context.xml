@@ -2,16 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
        default-lazy-init="true">
 
-    <context:annotation-config />
 
-    <import resource="toshiba_context.xml"/>
-    <import resource="sony_context.xml"/>
-
-    <bean id="t1000" class="ua.javabegin.spring.impl.robot.T1000" scope="prototype" />
-
+    <context:component-scan base-package="ua.javabegin.spring"/>
 
 </beans>

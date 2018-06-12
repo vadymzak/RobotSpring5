@@ -10,28 +10,24 @@ import ua.javabegin.spring.interfaces.Robot;
 public abstract class BaseModel implements Robot {
 
     @Autowired
-    @Qualifier("sonyGoldenHand")
     private Hand hand;
     @Autowired
-    @Qualifier("toshibaLeg")
     private Leg leg;
 
     @Autowired
-    @HeadType("ToshibaHead")
     private Head head;
 
     public BaseModel(){
         System.out.println(this + " BaseModel Constructor");
     }
 
-    /*
+
     public BaseModel(Hand hand, Leg leg, Head head) {
         this();
         this.hand = hand;
         this.leg = leg;
         this.head = head;
     }
-*/
     public Hand getHand() {
         return hand;
     }
